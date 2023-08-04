@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+  
+  <div class="col-md-4">
+    <form method="POST" class="mt-4 mb-5">
+      <div class="mb-3">{% csrf_token %}
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">
+        </div>
+        <div class="mb-3">
+          <label for="firstname" class="form-label">Firstname</label>
+          <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter firstName">
+        </div>
+        <div class="mb-3">
+          <label for="lastname" class="form-label">Lastname</label>
+          <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter lastname">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
+        </div>
+      <div class="mb-3">
+        <label for="pass1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Enter password">
+      </div>
+      
+      
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+  </div>
+  
+  
+
+</div>
+
+      
+{% endblock content %}

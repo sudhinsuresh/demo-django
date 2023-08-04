@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container-fluid mt-2">
+    <img src="{% static 'images/banner.jpg' %} " height="610px" width="100%">
+</div>
+<div class="container-fluid mt-4" style="margin-bottom: 100px;" >
+    <h3 class="text-center">Our Collection</h3>
+    <p class="text-justyfy" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+        molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+        numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+        optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
+        obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
+        nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
+        tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,
+        quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos 
+        sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam
+        recusandae alias error harum maxime adipisci amet</p>
+</div>
+<div class="container-fluid" style="margin-bottom: 100px;">
+    <div class="row">
+        {% for i in c %}
+        <div class="col-sm-4">
+            <div class="card" style="width: 22rem;">
+                <img src="{{i.image.url}}" class="card-img-top" alt="..." style="height: 300px;width:100%;">
+                <div class="card-body">
+                  <h5 class="card-title text-center">{{i.name}}</h5>
+                  <p class="card-text">{{i.description}}</p>
+                  <a href="{% url 'shop:allproducts' i.slug %}" class="btn btn-primary">PRODUCTS</a>
+                </div>
+              </div>
+        </div>
+          
+        {% endfor %}
+        
+    </div>
+</div>
+
+
+{% endblock content %}
